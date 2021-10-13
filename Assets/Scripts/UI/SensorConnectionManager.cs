@@ -28,44 +28,43 @@ public class SensorConnectionManager : MonoBehaviour
     private void OnConnect()
     {
         //nevermind
-    } 
+    }
 
     private void OnPoorSignal(int value)
     {
-        if (value < 20)
+        if (value > 50)
         {
-            if (value > 15)
-            {
-                notConnected.SetActive(false);
-                oneLine.SetActive(true);
-                twoLines.SetActive(false);
-                threeLines.SetActive(false);
-                fourLines.SetActive(false);
-            }
-            else if (value > 10)
-            {
-                notConnected.SetActive(false);
-                oneLine.SetActive(false);
-                twoLines.SetActive(true);
-                threeLines.SetActive(false);
-                fourLines.SetActive(false);
-            }
-            else if (value > 5)
-            {
-                notConnected.SetActive(false);
-                oneLine.SetActive(false);
-                twoLines.SetActive(false);
-                threeLines.SetActive(true);
-                fourLines.SetActive(false);
-            }
-            else
-            {
-                notConnected.SetActive(false);
-                oneLine.SetActive(false);
-                twoLines.SetActive(false);
-                threeLines.SetActive(false);
-                fourLines.SetActive(true);
-            }
+            notConnected.SetActive(true);
+            oneLine.SetActive(false);
+            twoLines.SetActive(false);
+            threeLines.SetActive(false);
+            fourLines.SetActive(false);
+        }
+        else if (value > 25)
+        {
+            notConnected.SetActive(false);
+            oneLine.SetActive(true);
+            twoLines.SetActive(false);
+            threeLines.SetActive(false);
+            fourLines.SetActive(false);
+        }
+        else if (value > 0)
+        {
+            notConnected.SetActive(false);
+            oneLine.SetActive(false);
+            twoLines.SetActive(true);
+            threeLines.SetActive(false);
+            fourLines.SetActive(false);
+        }
+        else
+        {
+            notConnected.SetActive(false);
+            oneLine.SetActive(false);
+            twoLines.SetActive(false);
+            threeLines.SetActive(true);
+            fourLines.SetActive(false);
         }
     }
+
+
 }

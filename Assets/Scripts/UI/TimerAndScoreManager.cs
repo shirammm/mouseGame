@@ -10,7 +10,7 @@ public class TimerAndScoreManager : MonoBehaviour
     [SerializeField]
     private Image timerBar;
     [SerializeField]
-    private static float maxTime = 12f;
+    private static float maxTime = 60f;
     private static float timeLeft;
 
     [SerializeField]
